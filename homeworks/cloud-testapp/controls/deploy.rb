@@ -17,7 +17,7 @@ testappport = File.read('README.md').match(/\s*testapp_port = ([0-9]{1,5})$/m)[1
 control 'Configuration' do
   title 'Check testapp installation scenarios'
 
-  %w(ruby-full ruby-bundler build-essential mongodb-org).each do |pkg|
+  %w(ruby-bundler build-essential mongodb-org).each do |pkg|
       describe package(pkg) do
         it { should be_installed }
     end
